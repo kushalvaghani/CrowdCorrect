@@ -1,0 +1,32 @@
+﻿
+<br />
+<div class="page-header">
+    <h3>Thanks for participating. <small>Help us correct issues with words picked from Tweets.</small></h3>
+</div>
+
+@*<div class="alert alert-warning alert-dismissible" role="alert" style="background-color:#FFDD62">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Help</strong> Please select an answer and click Next.
+    </div>*@
+
+
+<div class="jumbotron" ng-controller="CrowdCorrectController" ng-init="init()">
+    <span class="label label-primary" style="float:right">Task {{count}}</span>
+    <br/>
+    <div class="row">
+        <div class="alert alert-info" role="alert" style="background-color:white">
+            <img src="~/Content/tweet.png" />
+            {{tweet.Text}}
+        </div>
+        {{tweet.Description}}
+
+        <div class="input-group" ng-repeat="tag in tweet.TagQuestion.Tags">
+            <div class="col-sm-4">
+                <span class="input-group-addon">
+                    <input type="radio" aria-label="..." name="options"> {{tag.TagName}}
+                </span>
+            </div>
+        </div><!-- /input-group -->
+        <button type="button" class="btn btn-primary text-center" ng-click="Submit()" style="float:right">I want to answer more !</button>
+    </div>
+</div>
